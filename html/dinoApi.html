@@ -18,32 +18,37 @@
         </div>
         
         <div class="page-content-wrapper">
+
+            <div class="stacked-page-layer layer-2"></div>
+            <div class="stacked-page-layer layer-1"></div>
+
             <div class="page-left" id="page-left">
                 <div class="image-wrapper">
                         <img id="dino-image" src="" alt="Foto Dinosaurio">
                     </div>
-                <section class="descripcion">
-                    <p id="dino-description">Descripcion del dino</p>
-                </section>
-                <button class="returnBtn" id="prevBtn">Anterior</button>
-            </div>
+                    <button class="returnBtn" id="prevBtn">Anterior</button>
+                </div>
+                
+                <div class="page-right" id="page-right">
+                    <h2>General Information</h2>
+                    <ul class="dino-data-list">
+                        <li><label>Nombre:</label><span id="nombre"></span></li>
+                        <li><label>Nombre cientifico:</label><span id="nombreCientifico"></span></li>
+                        <li><label>Era:</label><span id="era"></span></li>
+                        <li><label>Dieta:</label><span id="dieta"></span></li>
+                        <li><label>Tipo:</label><span id="tipo"></span></li>
+                        <li><label>Longitud:</label><span id="longitud"></span></li>
+                        <li><label>Altura:</label><span id="altura"></span></li>
+                        <li><label>Peso:</label><span id="peso"></span></li>
+                    </ul>
+                    
+                    <section class="descripcion">
+                        <p id="dino-description">Descripcion del dino</p>
+                    </section>
 
-            <div class="page-right" id="page-right">
-                <h2>General Information</h2>
-                <ul class="dino-data-list">
-                    <li><label>Nombre:</label><span id="nombre"></span></li>
-                    <li><label>Nombre cientifico:</label><span id="nombreCientifico"></span></li>
-                    <li><label>Era:</label><span id="era"></span></li>
-                    <li><label>Dieta:</label><span id="dieta"></span></li>
-                    <li><label>Tipo:</label><span id="tipo"></span></li>
-                    <li><label>Longitud:</label><span id="longitud"></span></li>
-                    <li><label>Altura:</label><span id="altura"></span></li>
-                    <li><label>Peso:</label><span id="peso"></span></li>
-                </ul>
-
-                <button id="nextBtn" class="nextBtn">Siguiente</button>
+                    <button id="nextBtn" class="nextBtn">Siguiente</button>
+                </div>
             </div>
-        </div>
     </div>
     </div>
 
