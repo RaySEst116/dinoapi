@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styesIndex.css">
+    <title>DinoApi by Ray S. Estrada</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h2>Welcome to DinoApi</h2><span>By Ray Estrada</span>
+        </header>
+
+        <nav class="nav-container">
+            <ul>
+                <a href="#about"><li>About DinoApi</li></a>
+                <a href="/html/dinoApi.html"><li>DinoApi</li></a>
+                <a href="#cotacto"><li>Contact Me</li></a>
+            </ul>
+        </nav>
+    </main>
+
+    <section id="about-section" class="dinoapi-section">
+            <div class="content-wrapper">
+                <h2>🦕 Acerca de DinoApi</h2>
+                
+                <p>
+                    ¡Bienvenido al <strong>Museo Digital de la Era Mesozoica</strong>!
+                </p>
+                <p>
+                    DinoApi es un servicio web gratuito diseñado para proporcionar <strong>datos estructurados</strong> 
+                    y detallados sobre dinosaurios y reptiles prehistóricos. Piensa en DinoApi como la <strong>PokéAPI 
+                        de la paleontología</strong>: nuestro objetivo es ser la fuente de datos definitiva y fácil de 
+                        usar para cualquier estudiante o entusiasta que quiera construir proyectos 
+                        relacionados con la prehistoria.
+                </p>
+                <hr>
+
+                <h3>💡¿Cómo Funciona? La Analogía con PokéAPI</h3>
+                <p>
+                    Al igual que PokéAPI ofrece datos sobre criaturas prehistoricas, DinoApi te proporciona información real sobre las criaturas más impresionantes que han pisado la Tierra:
+                </p>
+
+                <div class="table-responsive">
+                    <table class="api-comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>DinoApi</th>
+                                <th>PokéAPI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Recursos</strong></td>
+                                <td>Dinosaurios (por era, por dieta), Reptiles Marinos, Fósiles.</td>
+                                <td>Pokémon, Habilidades, Tipos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Datos Devueltos</strong></td>
+                                <td>Nombre, Altura, Longitud, Peso, Dieta (Carnívora/Herbívora), Era (Jurásico, Cretácico), Imágenes.</td>
+                                <td>Nombre, Estadísticas base, Evoluciones, Tipos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Acceso</strong></td>
+                                <td>Puntos de conexión (Endpoints) basados en RESTful (ej. <code>/dinos</code>, <code>/dinos/25</code>).</td>
+                                <td>Puntos de conexión (Endpoints) basados en RESTful (ej. <code>/pokemon</code>, <code>/pokemon/25</code>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <hr>
+
+                <h3>Objetivo</h3>
+                <p>Quiero que el acceso a la información paleontológica sea <strong>simple y divertido</strong>.</p>
+                
+                <button><a href="/html/dinoApi.html">Try the DinoApi</a><i class="bi bi-arrow-right-short"></i></button>
+            </div>
+        </section>
+
+    <section id="contacto" class="contacto">
+        <form action="">
+            <label for="nombre">Name</label>
+            <input type="text" id="nombre" placeholder="Ej. Leo San Juan" name="nombre" required>
+            <br>
+
+            <label for="email">E-Mail</label>
+            <input type="text" id="email" placeholder="example@mail.com" name="email" required>
+            <br>
+
+            <label for="textarea">Describe your idea</label>
+            <textarea name="textarea" id="textarea" placeholder="Ex. I want a Demon Slayer landing page"></textarea>
+
+            <button id="btnEnviar" type="submit">Enviar</button>
+            <button id="btnLimpiar" type="reset">Limpiar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p><i class="bi bi-c-circle"></i>All rights reserved - Ray S. Estrada 2025</p>
+        <center>
+            <p>You can find me in:</p>
+            <i class="bi bi-github"></i><a href="">ray.s.est116</a>
+            <i class="bi bi-linkedin"></i><a href="">Ray S. Estrada</a>
+            <i class="bi bi-instagram"></i><a href="">ray_est.116</a>
+        </center>
+    </footer>
+</body>
+</html>

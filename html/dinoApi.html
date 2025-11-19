@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylesDinoApi.css">
+    <title>The DinoApi</title>
+</head>
+<body>
+    <h1>The DinoApi</h1><span>By Ray Estrada</span>
+
+    <div class="book-wrapper">
+        <div class="book-container">
+        <div class="era-tabs">
+            <a href="#" class="tab active" data-era="cretacico" data-index="0">Cretácico</a>
+            <a href="#" class="tab" data-era="jurasico" data-index="1">Jurásico</a>
+            <a href="#" class="tab" data-era="triasico" data-index="2">Triásico</a>
+        </div>
+        <div class="page-left" id="page-left">
+            <div class="image-wrapper">
+                    <img id="dino-image" src="" alt="Foto Dinosaurio">
+                </div>
+            <section class="descripcion">
+                <p id="dino-description">Descripcion del dino</p>
+            </section>
+            <button class="returnBtn" id="prevBtn">Anterior</button>
+        </div>
+
+        <div class="page-right" id="page-right">
+            <h2>General Information</h2>
+            <ul class="dino-data-list">
+                <li><label>Nombre:</label><span id="nombre"></span></li>
+                <li><label>Nombre cientifico:</label><span id="nombreCientifico"></span></li>
+                <li><label>Era:</label><span id="era"></span></li>
+                <li><label>Dieta:</label><span id="dieta"></span></li>
+                <li><label>Tipo:</label><span id="tipo"></span></li>
+                <li><label>Longitud:</label><span id="longitud"></span></li>
+                <li><label>Altura:</label><span id="altura"></span></li>
+                <li><label>Peso:</label><span id="peso"></span></li>
+            </ul>
+
+            <button id="nextBtn" class="nextBtn">Siguiente</button>
+        </div>
+    </div>
+    </div>
+
+    <button class="main-return-btn"><a href="/index.html">Regresar</a></button>
+    <footer>
+        <p><i class="bi bi-c-circle"></i>All rights reserved - Ray S. Estrada 2025</p>
+    </footer>
+
+    <script src="/js/dinoApi.js"></script>
+</body>
+</html>
