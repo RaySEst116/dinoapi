@@ -8,7 +8,9 @@
 
 body {
     /* Fondo que parece madera oscura para contrastar */
-    background-color: #4a341e; 
+    background: url(/assets/fondoPiedra.jpg);
+    background-size: cover;
+    background-attachment: fixed; 
     font-family: 'Times New Roman', Times, serif;
     color: var(--book-text);
     display: flex;
@@ -25,7 +27,8 @@ h1 {
 }
 
 span {
-    color: #a0a0a0;
+    color: var(--book-paper);
+    text-shadow: 2px 2px 4px var(--book-shadow);
     margin-bottom: 20px;
     font-style: italic;
 }
@@ -311,7 +314,6 @@ span {
     display: flex;
     flex-direction: column; /* Apilarlas verticalmente */
     z-index: 5; /* Z-index bajo para que se muestren DEBAJO del contenido de la página */
-    padding-left: 10px; /* Separación de la cubierta exterior */
 }
 
 .tab {
