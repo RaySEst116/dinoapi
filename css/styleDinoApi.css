@@ -1,0 +1,315 @@
+/* Variables para colores de libro */
+:root {
+    --book-paper: #f0e6c8; /* Color de papel antiguo */
+    --book-border: #8b4513; /* Color de borde o cubierta */
+    --book-shadow: rgba(0, 0, 0, 0.4);
+    --book-text: #333;
+}
+
+body {
+    background: url(/assets/fondoPiedra.jpg);
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--book-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    color: var(--book-paper);
+    text-shadow: 2px 2px 4px var(--book-shadow);
+    margin-bottom: 5px;
+}
+
+span {
+    color: #a0a0a0;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* --- Contenedor Principal del Libro --- */
+
+.book-wrapper {
+    perspective: 2000px; /* Para efecto 3D */
+    position: relative;
+    padding: 30px;
+    background-color: var(--book-border);
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px var(--book-shadow);
+    width: 800px; /* Ancho total del libro abierto */
+    margin: 20px 0;
+}
+
+.book-container {
+    display: flex;
+    width: 100%;
+    /* Simula la doble página */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+/* --- Estilo de la Página (Izquierda y Derecha) --- */
+
+.page-left, .page-right {
+    flex: 1;
+    background-color: var(--book-paper);
+    padding: 20px;
+    min-height: 500px;
+    position: relative;
+    border: 1px solid #ccc; /* Separación visual de las páginas */
+    /* Textura de papel antiguo */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><line x1="0" y1="0" x2="100" y2="100" stroke="%238b4513" stroke-width="1"/></svg>'),
+    linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.01));
+    background-repeat: repeat;
+    filter: sepia(0.5) contrast(1.1); /* Efecto de envejecimiento */
+}
+
+.page-left {
+    clip-path: polygon(
+        0% 0%, /* Superior izquierdo */
+        100% 0%, /* Superior derecho */
+        100% 100%, /* Inferior derecho */
+        0% 100%, /* Inferior izquierdo */
+        2% 98%, /* Irregularidades */
+        1% 95%,
+        3% 92%,
+        0% 89%,
+        2% 86%,
+        1% 83%,
+        3% 80%,
+        0% 77%,
+        2% 74%,
+        1% 71%,
+        3% 68%,
+        0% 65%,
+        2% 62%,
+        1% 59%,
+        3% 56%,
+        0% 53%,
+        2% 50%,
+        1% 47%,
+        3% 44%,
+        0% 41%,
+        2% 38%,
+        1% 35%,
+        3% 32%,
+        0% 29%,
+        2% 26%,
+        1% 23%,
+        3% 20%,
+        0% 17%,
+        2% 14%,
+        1% 11%,
+        3% 8%,
+        0% 5%,
+        2% 2%
+    );
+}
+
+.page-right {
+    clip-path: polygon(
+        0% 0%, /* Superior izquierdo */
+        100% 0%, /* Superior derecho */
+        98% 2%, /* Irregularidades */
+        100% 5%,
+        97% 8%,
+        100% 11%,
+        98% 14%,
+        100% 17%,
+        97% 20%,
+        100% 23%,
+        98% 26%,
+        100% 29%,
+        97% 32%,
+        100% 35%,
+        98% 38%,
+        100% 41%,
+        97% 44%,
+        100% 47%,
+        98% 50%,
+        100% 53%,
+        97% 56%,
+        100% 59%,
+        98% 62%,
+        100% 65%,
+        97% 68%,
+        100% 71%,
+        98% 74%,
+        100% 77%,
+        97% 80%,
+        100% 83%,
+        98% 86%,
+        100% 89%,
+        97% 92%,
+        100% 95%,
+        98% 98%,
+        100% 100%, /* Inferior derecho */
+        0% 100% /* Inferior izquierdo */
+    );
+    display: flex; /* Para controlar el posicionamiento del botón */
+    flex-direction: column; /* Para que el contenido se apile verticalmente */
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+}
+
+/* Efecto de pliegue central */
+.page-left::after, .page-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15px; /* Ancho del pliegue */
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.page-left::after {
+    right: -15px; /* Sombra en el borde interior derecho */
+}
+
+.page-right::before {
+    left: -15px; /* Sombra en el borde interior izquierdo */
+}
+
+/* --- Suciedad y Manchas (Overlay) --- */
+.book-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Esto simula manchas de suciedad */
+    background-image: radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.1) 5%, transparent 20%),
+    radial-gradient(circle at 80% 90%, rgba(0, 0, 0, 0.1) 5%, transparent 15%);
+    pointer-events: none; /* Asegura que el contenido sea clicable */
+    z-index: 10;
+}
+
+/* --- Pestañas de Era (Separadores) --- */
+.era-tabs {
+    position: absolute;
+    top: -20px; /* Posiciona las pestañas sobre el libro */
+    left: 25%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    z-index: 20;
+}
+
+.tab {
+    background-color: #a0522d; /* Color de la pestaña (ej. cuero o cartulina) */
+    color: white;
+    padding: 5px 15px;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 8px 8px 0 0;
+    border: 2px solid var(--book-border);
+    border-bottom: none;
+    transition: background-color 0.3s;
+    transform: skewY(2deg); /* Ligera inclinación para un look menos formal */
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tab:hover, .tab.active {
+    background-color: #8b4513; /* Color al pasar el ratón o activo */
+    z-index: 25;
+}
+
+.tab.active {
+    /* Borde que conecta visualmente con el interior */
+    border-color: var(--book-border);
+    background-color: #8b4513;
+}
+
+/* --- Controles y Datos --- */
+
+/* Estilo para los botones */
+.returnBtn, .nextBtn {
+    background-color: #b0c4de;
+    border: 1px solid #778899;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    filter: sepia(0.3); /* Envejecer los botones */
+    margin-top: 15px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px var(--book-shadow);
+}
+
+.nextBtn {
+    align-self: flex-end; /* Alinea el botón a la derecha dentro de su contenedor flex */
+    margin-top: auto; /* Empuja el botón hacia la parte inferior */
+    margin-right: 10px; /* Un poco de margen desde el borde derecho */
+    margin-bottom: 10px; /* Un poco de margen desde el borde inferior */
+}
+
+.returnBtn {
+    align-self: flex-start;
+    margin-top: auto;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.returnBtn:hover, .nextBtn:hover {
+    background-color: #a9b9cf;
+}
+
+/* Lista de datos (derecha) */
+.dino-data-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.dino-data-list label {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px; /* Alineación de los dos puntos */
+    color: #555;
+    font-style: italic;
+}
+
+/* Imagen del Dinosaurio */
+.image-wrapper {
+    text-align: center;
+    margin-bottom: 15px;
+    border: 2px solid #555;
+    padding: 5px;
+    background-color: #eee;
+    box-shadow: 3px 3px 5px var(--book-shadow);
+    transform: rotate(1deg); /* Ligeramente torcida */
+}
+
+#dino-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(30%) sepia(20%); /* Efecto foto vieja */
+}
+
+/* Botón de Regreso Principal */
+.main-return-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #4a341e;
+    border: 2px solid #2e1a06;
+    border-radius: 5px;
+}
+
+.main-return-btn a {
+    color: var(--book-paper);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 20px;
+    color: #a0a0a0;
+    font-size: 0.8em;
+}
